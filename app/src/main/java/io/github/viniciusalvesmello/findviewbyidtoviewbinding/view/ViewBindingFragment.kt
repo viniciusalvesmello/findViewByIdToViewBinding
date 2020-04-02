@@ -7,17 +7,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import io.github.viniciusalvesmello.findviewbyidtoviewbinding.R
+import io.github.viniciusalvesmello.findviewbyidtoviewbinding.databinding.FragmentViewBindingBinding
 import io.github.viniciusalvesmello.findviewbyidtoviewbinding.viewmodel.MainViewModel
 
 class ViewBindingFragment : Fragment() {
 
     private val viewModel: MainViewModel by activityViewModels()
 
+    private var _binding: FragmentViewBindingBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_view_binding, container, false)
+    ): View? {
+        _binding = FragmentViewBindingBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,13 +33,20 @@ class ViewBindingFragment : Fragment() {
     }
 
     private fun initListener() {
-        //TODO ON CLICK LISTENER
+        binding.bViewBindingCounter.setOnClickListener {
+            viewModel.incCounter()
+        }
     }
 
     private fun initObserver() {
         viewModel.counter.observe(viewLifecycleOwner, Observer {
-            //TODO UPDATE UI
+            binding.tvViewBindingCounter.text = (it ?: 0).toString()
         })
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {
