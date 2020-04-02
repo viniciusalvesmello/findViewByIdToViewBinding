@@ -37,7 +37,7 @@ class ViewBindingAndDataBindingFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance() = DataBindingFragment()
+        fun newInstance() = ViewBindingAndDataBindingFragment()
     }
 
 }

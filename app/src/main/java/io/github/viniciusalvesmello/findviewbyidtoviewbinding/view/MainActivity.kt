@@ -28,6 +28,9 @@ class MainActivity : AppCompatActivity() {
         bViewBinding.setOnClickListener {
             initFragment(ViewBindingFragment.newInstance())
         }
+        bViewBindingAndDataBinding.setOnClickListener {
+            initFragment(ViewBindingAndDataBindingFragment.newInstance())
+        }
     }
 
     private fun initFragment(fragment: Fragment) {

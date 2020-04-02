@@ -37,7 +37,6 @@ class FindViewByIdFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance() =
-            FindViewByIdFragment()
+        fun newInstance() = FindViewByIdFragment()
     }
 }

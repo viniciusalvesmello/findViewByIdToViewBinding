@@ -38,7 +38,6 @@ class KotlinSyntheticFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance() =
-            FindViewByIdFragment()
+        fun newInstance() = KotlinSyntheticFragment()
     }
 }
