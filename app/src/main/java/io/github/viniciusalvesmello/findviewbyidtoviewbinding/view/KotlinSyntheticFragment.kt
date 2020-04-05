@@ -9,7 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import io.github.viniciusalvesmello.findviewbyidtoviewbinding.R
 import io.github.viniciusalvesmello.findviewbyidtoviewbinding.viewmodel.MainViewModel
-
+import kotlinx.android.synthetic.main.fragment_kotin_synthetic.*
 
 class KotlinSyntheticFragment : Fragment() {
 
@@ -28,12 +28,14 @@ class KotlinSyntheticFragment : Fragment() {
     }
 
     private fun initListener() {
-        //TODO ON CLICK LISTENER
+        bKotlinSyntheticCounter.setOnClickListener {
+            viewModel.incCounter()
+        }
     }
 
     private fun initObserver() {
         viewModel.counter.observe(viewLifecycleOwner, Observer {
-            //TODO UPDATE UI
+            tvKotlinSyntheticCounter.text = (it ?: 0).toString()
         })
     }
 
