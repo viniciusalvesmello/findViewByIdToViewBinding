@@ -1,4 +1,4 @@
-#Do findViewById para o View Binding
+# Do findViewById para o View Binding
 
 Durante o [Google I/O'19 tomei nota sobre as vantagens do View Binding](https://dev.to/viniciusalvesmello/resumo-view-binding-android-studio-3-6-google-io-19-5em6). Depois deste evento estava ansioso aguardando o lançamento do Android Studio 3.6. Eis que chegou este dia!
 
